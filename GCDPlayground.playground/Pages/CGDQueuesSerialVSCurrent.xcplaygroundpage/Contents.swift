@@ -4,7 +4,7 @@ import UIKit
 
 struct GDCQueues {
     
-    let serialQueue = DispatchQueue(label: "io.keepcoding.serialQueue")
+    let serialQueue = DispatchQueue(label: "io.keepcoding.serialQueue") //El label actúa como descripción de la cola o su "nombre" para dar información a los desarrolladores sobre qué es lo que hace la cola. Aquí se ve la importancia de saber escoger de manera adecuada el nombre de las variables
     let concurrentQueue = DispatchQueue(label: "io.keepcoding.concurrentQueue", attributes: .concurrent) //hay que notificar el atributo current para que la cola sea concurrente (que las tareas se vayan ejecutando a la vez). Si no se especifica es una cola en serie (como la de arriba) en la que las tareas se van ejecutando de forma secuencial.
     
     //en este metodo vamos a crear un for que va a pintar task 1, task 2 y task 3 y vamos a ver como funciona en una cola en serie y en otra concurrente
